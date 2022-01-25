@@ -1,8 +1,8 @@
 
-from socketserver import DatagramRequestHandler
 
 
-sleep_in_between = 5
+
+sleep_in_between = 5 # sleep after every message 
 
 message = {
     "message,1": "Good evening, <name>",
@@ -43,10 +43,4 @@ https://www.tepat.net/canva-free-training/
     }
 
 url = "https://docs.google.com/spreadsheets/d/16cfEsfUVomuTAPlRLVvpX4YAiJx8ocPGa_yiOR6Lqls/edit?usp=sharing"
-
-a = 1
-a = 3
-
-a = {
-    "message,133"
-}
+loading_sleep = 30 # increase this if you have slow internet connection
