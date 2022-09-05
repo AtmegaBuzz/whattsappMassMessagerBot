@@ -1,7 +1,5 @@
 # whattsappMassMessagerBot | Marketing Tool
-it sends coustomised mass messages to people
-- client requirements
-it takes a google spreadsheet url  which contains phoneno and names related to the numbers 
+Mass Messager | Marketing tool/bot for whatsapp which can send messages and dockuments to list of numbers endered in your google sheet.
 
 # Setup tutorial 
   - requirements : selenuim and gspread
