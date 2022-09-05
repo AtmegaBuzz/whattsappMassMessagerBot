@@ -48,11 +48,8 @@ def run_bot():
 
 
     chrome_options = Options()
-    path = os.path.join(os.getcwd(),"Selenium")
-    chrome_options.add_argument(f"user-data-dir={path}") 
-    # chrome_options.add_argument("--headless")
-    # chrome_options.add_argument(f"user-data-dir=C:\\Users\\LENOVO\\Library\\Application Support\\Google\\Chrome\\wtsp") 
-    chrome_options
+    chrome_options.add_argument(f"user-data-dir={os.path.join(os.getcwd(),'Selenium')}") 
+
     driver = webdriver.Chrome(chrome_options=chrome_options)
     driver.get('https://web.whatsapp.com')
 
