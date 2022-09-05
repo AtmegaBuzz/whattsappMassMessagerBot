@@ -1,0 +1,4 @@
+Selenium
+venv
+__pycache__
+chromedriver.exe

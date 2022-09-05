@@ -2,7 +2,7 @@
 
 
 
-sleep_in_between = 5 # sleep after every message 
+sleep_in_between = 0 # sleep after every message 
 
 message = {
     "message,1": "Good evening, <name>",
@@ -14,7 +14,7 @@ TEPAT IS OFFERING YOU A *FREE CANVA (GRAPHIC DESIGN)* TRAINING with limited seat
 We give priority to those who joined Digital Marketing training claimed under EIS PERKESO.  
     """,
 
-    "media,1": "event photo.jpeg",
+    "media,1": "mikasa acr.jpg",
 
     "message,3": """
 *Training Details*
@@ -31,7 +31,7 @@ We give priority to those who joined Digital Marketing training claimed under EI
 ❤️Participate in Tepat’s Logo Designing Competition, and stand a chance to win a cash prize.
     """,
 
-    "media,2": "Tepat Free Canva Training Brochure.pdf",
+    "media,2": "resume swap.pdf",
 
     "message,5": """
 Click the link below to register your FREE SEAT !!!!
@@ -42,5 +42,5 @@ https://www.tepat.net/canva-free-training/
     
     }
 
-url = "https://docs.google.com/spreadsheets/d/16cfEsfUVomuTAPlRLVvpX4YAiJx8ocPGa_yiOR6Lqls/edit?usp=sharing"
+url = "https://docs.google.com/spreadsheets/d/16cfEsfUVomuTAPlRLVvpX4YAiJx8ocPGa_yiOR6Lqls/edit?pli=1#gid=0"
 loading_sleep = 30 # increase this if you have slow internet connection

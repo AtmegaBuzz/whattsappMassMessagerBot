@@ -48,7 +48,8 @@ def run_bot():
 
 
     chrome_options = Options()
-    chrome_options.add_argument(f"user-data-dir=C:\\Users\\LENOVO\\Desktop\\wattsappbot\\Selenium") 
+    path = os.path.join(os.getcwd(),"Selenium")
+    chrome_options.add_argument(f"user-data-dir={path}") 
     # chrome_options.add_argument("--headless")
     # chrome_options.add_argument(f"user-data-dir=C:\\Users\\LENOVO\\Library\\Application Support\\Google\\Chrome\\wtsp") 
     chrome_options
@@ -74,20 +75,21 @@ def run_bot():
             return True
 
         counter_file = open("count.txt","w",encoding="utf8")
-        
-        driver.get(f'https://web.whatsapp.com/send?phone=+{phone_numbers[index]}')
 
+        driver.get(f'https://web.whatsapp.com/send?phone=+{phone_numbers[index]}')
+ 
         for key in message:
+            # sleep(100)
             if(key.split(",")[0]=="message"):
                 
                 message_ = message[key].replace("<name>",names[index])
 
-                type_box = WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[2]")))
+                type_box = WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]")))
                 
                 message_lines = message_.split("\n")
                 for message__ in message_lines:
                     type_box.send_keys(message__+Keys.SHIFT+Keys.ENTER)
-                    sleep(randint(1,5))
+                    # sleep(randint(1,5))
                 # send
                 WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/footer/div[1]/div/span[2]/div/div[2]/div[2]/button"))).send_keys(Keys.RETURN)
 
@@ -108,7 +110,7 @@ def run_bot():
                 print("wrong key passed")
                 continue
             
-            sleep(sleep_in_between+randint(1,5))
+            sleep(sleep_in_between)
             
         counter_file.write(f"{index+1}")
         sleep(randint(10,20))
