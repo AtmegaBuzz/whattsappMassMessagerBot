@@ -4,7 +4,6 @@ contact: swapnilshinde9382@gmail.com
 """
 
 
-
 import os
 import gspread
 from selenium import webdriver
@@ -16,6 +15,7 @@ from time import sleep
 from config import message,url,sleep_in_between, loading_sleep
 from random import randint
 from selenium.webdriver.chrome.options import Options
+import chromedriver_autoinstaller
 
 def completed_till()->int:
 
@@ -46,7 +46,7 @@ def run_bot():
     for _ in range(len(phone_numbers)-len(names)):
         names.append("")
     
-
+    chromedriver_autoinstaller.install()
 
     chrome_options = Options()
     chrome_options.add_argument(f"user-data-dir={os.path.join(os.getcwd(),'Selenium')}") 

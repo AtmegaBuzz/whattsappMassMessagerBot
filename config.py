@@ -2,46 +2,56 @@
 
 
 
-sleep_in_between = 0 # sleep after every message 
-url = ""
+sleep_in_between = 3 # sleep after every message 
+url = "https://docs.google.com/spreadsheets/d/16cfEsfUVomuTAPlRLVvpX4YAiJx8ocPGa_yiOR6Lqls/edit?pli=1#gid=0"
 loading_sleep = 30 # increase this if you have slow internet connection
 
 
 message = {
-    "message,1": "Good evening, <name>",
 
-    "message,2": """
-TEPAT IS OFFERING YOU A *FREE CANVA (GRAPHIC DESIGN)* TRAINING with limited seats available❗❗❗
-& stand a chance to WIN CASH PRIZE for logo design
+    "message,1": "hi how are you <name>",
+    "media,2": "mikasa acr.jpg",
+    "message,3": "nic to meet you",
+    "media,4" : "resume swap.pdf"
+
+}
+
+
+# message = {
+#     "message,1": "Good evening, <name>",
+
+#     "message,2": """
+# TEPAT IS OFFERING YOU A *FREE CANVA (GRAPHIC DESIGN)* TRAINING with limited seats available❗❗❗
+# & stand a chance to WIN CASH PRIZE for logo design
     
-We give priority to those who joined Digital Marketing training claimed under EIS PERKESO.  
-    """,
+# We give priority to those who joined Digital Marketing training claimed under EIS PERKESO.  
+#     """,
 
-    "media,1": "mikasa acr.jpg",
+#     "media,1": "mikasa acr.jpg",
 
-    "message,3": """
-*Training Details*
-✅ The classes will be conducted bilingually (BM + English).
-✅ The classes will be 100% online, conducted on the Microsoft Teams platform.
-✅ The participants will learn A to Z about Canva in 8 hours training.
-✅ Classes will be conducted only on Saturdays (4 hours per day).
-✅ The training dates are 12th February 2022 and 19th February 2022 from 9:00am until 1:00pm.
-    """,
+#     "message,3": """
+# *Training Details*
+# ✅ The classes will be conducted bilingually (BM + English).
+# ✅ The classes will be 100% online, conducted on the Microsoft Teams platform.
+# ✅ The participants will learn A to Z about Canva in 8 hours training.
+# ✅ Classes will be conducted only on Saturdays (4 hours per day).
+# ✅ The training dates are 12th February 2022 and 19th February 2022 from 9:00am until 1:00pm.
+#     """,
 
-    "message,4": """
-*Learning outcome*
-❤️Design a professional-looking poster within 15 minutes.
-❤️Participate in Tepat’s Logo Designing Competition, and stand a chance to win a cash prize.
-    """,
+#     "message,4": """
+# *Learning outcome*
+# ❤️Design a professional-looking poster within 15 minutes.
+# ❤️Participate in Tepat’s Logo Designing Competition, and stand a chance to win a cash prize.
+#     """,
 
-    "media,2": "resume swap.pdf",
+#     "media,2": "resume swap.pdf",
 
-    "message,5": """
-Click the link below to register your FREE SEAT !!!!
+#     "message,5": """
+# Click the link below to register your FREE SEAT !!!!
 
-https://www.tepat.net/canva-free-training/
+# https://www.tepat.net/canva-free-training/
    
-    """,
+#     """,
     
-    }
+#     }
 
