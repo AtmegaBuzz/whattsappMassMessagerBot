@@ -12,7 +12,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from time import sleep
-from config import message,url,sleep_in_between, loading_sleep
+from config import (
+    message,
+    url,
+    sleep_in_between,
+    loading_sleep,
+    ending_row
+)
 from random import randint
 from selenium.webdriver.chrome.options import Options
 import chromedriver_autoinstaller
@@ -30,10 +36,13 @@ def completed_till()->int:
             
             done_till_counter = int(done_till_counter)
 
+
+
     except (FileNotFoundError,IOError):
         with open("count.txt","w",encoding="utf8") as f:
             done_till_counter = 0
             f.write("0")
+        
     return done_till_counter
 
 def run_bot():
@@ -41,7 +50,7 @@ def run_bot():
     gc = gspread.service_account(filename="cred.json")
     gsheet = gc.open_by_url(url)
     worksheet = gsheet.worksheets()[0]
-    phone_numbers = worksheet.col_values(1)
+    phone_numbers = worksheet.col_values(1)[:ending_row]
     names = worksheet.col_values(2)
     for _ in range(len(phone_numbers)-len(names)):
         names.append("")
@@ -117,12 +126,10 @@ def run_bot():
 
 
 def __run_mainloop__():
-    while(True):
-        try:
-            run_bot()
-        except Exception as e:
-            print("some err occured",e)
-        sleep(50+randint(1,20))
-
+    
+    try:
+        run_bot()
+    except Exception as e:
+        print("some err occured",e)
 
 __run_mainloop__()
