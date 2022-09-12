@@ -6,7 +6,7 @@ sleep_in_between = 3 # sleep after every message
 url = "https://docs.google.com/spreadsheets/d/16cfEsfUVomuTAPlRLVvpX4YAiJx8ocPGa_yiOR6Lqls/edit?pli=1#gid=0"
 loading_sleep = 30 # increase this if you have slow internet connection
 
-ending_row = 2
+ending_row = 100
 
 message = {
 

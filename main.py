@@ -49,9 +49,11 @@ def run_bot():
     done_till_counter = completed_till()
     gc = gspread.service_account(filename="cred.json")
     gsheet = gc.open_by_url(url)
-    worksheet = gsheet.worksheets()[0]
+    worksheet = gsheet.get_worksheet(0)
+    outgoing = gsheet.get_worksheet(1)
     phone_numbers = worksheet.col_values(1)[:ending_row]
-    names = worksheet.col_values(2)
+    names = worksheet.col_values(2)[:ending_row]
+    
     for _ in range(len(phone_numbers)-len(names)):
         names.append("")
     
@@ -68,61 +70,60 @@ def run_bot():
         while(True):
             WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div/div[2]/div[1]/div/div[2]/div/canvas")))
             print("scan the code")
-            sleep(5)
+            sleep(4)
     except:
         print("scan not required")
         pass
 
 
-    count = 0
     
     for index in range(done_till_counter,len(phone_numbers)):
         
-        if(count==10):
-            return True
-
         counter_file = open("count.txt","w",encoding="utf8")
 
-        driver.get(f'https://web.whatsapp.com/send?phone=+{phone_numbers[index]}')
- 
-        for key in message:
-            
-            if(key.split(",")[0]=="message"):
+        driver.get(f'https://web.whatsapp.com/send?phone=+{phone_numbers[index]}+323')
+
+        try:
+            for key in message:
                 
-                message_ = message[key].replace("<name>",names[index])
+                if(key.split(",")[0]=="message"):
+                    
+                    message_ = message[key].replace("<name>",names[index])
 
-                type_box = WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]")))
+                    type_box = WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]")))
+                    
+                    message_lines = message_.split("\n")
+                    for message__ in message_lines:
+                        type_box.send_keys(message__+Keys.SHIFT+Keys.ENTER)
+                        sleep(randint(1,5))
+                    # send
+                    WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/footer/div[1]/div/span[2]/div/div[2]/div[2]/button"))).send_keys(Keys.RETURN)
+
+
+                elif(key.split(",")[0]=="media"):
+                    WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/div"))).click()
+                    WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/span/div[1]/div/ul/li[1]/button/input"))).send_keys(os.path.abspath("assets")+"\\"+message[key])
+                    WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[2]/div[2]/span/div[1]/span/div[1]/div/div[2]/div/div[2]/div[2]/div/div"))).click()
+                                                                                    
                 
-                message_lines = message_.split("\n")
-                for message__ in message_lines:
-                    type_box.send_keys(message__+Keys.SHIFT+Keys.ENTER)
-                    sleep(randint(1,5))
-                # send
-                WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/footer/div[1]/div/span[2]/div/div[2]/div[2]/button"))).send_keys(Keys.RETURN)
+                elif(key.split(",")[0]=="document"):
+                    WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/div"))).click()
+                    WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/span/div[1]/div/ul/li[4]/button/input"))).send_keys(os.path.abspath("assets")+"\\"+message[key])
+                    WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[2]/div[2]/span/div[1]/span/div[1]/div/div[2]/div/div[2]/div[2]/div/div"))).click()
+                                                
 
-
-            elif(key.split(",")[0]=="media"):
-                WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/div"))).click()
-                WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/span/div[1]/div/ul/li[1]/button/input"))).send_keys(os.path.abspath("assets")+"\\"+message[key])
-                WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[2]/div[2]/span/div[1]/span/div[1]/div/div[2]/div/div[2]/div[2]/div/div"))).click()
-                                                                                
-            
-            elif(key.split(",")[0]=="document"):
-                WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/div"))).click()
-                WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/span/div[1]/div/ul/li[4]/button/input"))).send_keys(os.path.abspath("assets")+"\\"+message[key])
-                WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[2]/div[2]/span/div[1]/span/div[1]/div/div[2]/div/div[2]/div[2]/div/div"))).click()
-                                            
-
-            else:
-                print("wrong key passed")
-                continue
-            
-            sleep(sleep_in_between)
-            
-        counter_file.write(f"{index+1}")
-        sleep(randint(10,20))
-        print("done for",phone_numbers[index])
-
+                else:
+                    print("wrong key passed")
+                    continue
+                
+                sleep(sleep_in_between)
+                
+            counter_file.write(f"{index+1}")
+            sleep(randint(10,20))
+            print("done for",phone_numbers[index])
+        except:
+            print(f"Failed for Number {phone_numbers[index]}")
+            outgoing.append_row([phone_numbers[index],names[index],"failed"])
 
 
 def __run_mainloop__():
