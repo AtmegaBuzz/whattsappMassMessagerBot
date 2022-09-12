@@ -1,12 +1,1 @@
-{
-    "type": "service_account",
-    "project_id": "braingroom-india",
-    "private_key_id": "c8915b14b7979fff44d28639f1d151c2d3792a90",
-    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDolJ0WBXiZ/oPM\nyxYeCQHKggF+SVvPaWdA0H+QCilH7U3TnNEciCmZys0O5aH+5R3ttkrUPXG7oXEx\n/zm0HP6bdRbR+KgRhHthfQ3ROoilntuXWJ6xC55iO5ZRoiHlmlVPmmwYNyKhdHg+\nFGe+3edcPRRXYE8gX2Vyt+l61pqpDJ57vW5HkC/YliY8pmdHvHsioYsHSEVngyIu\nrTeSUlrSz/zH4noqGg5vd30+p1qSwS7kfPHC9Nk/dsnLM/Pc4Z05c1VipLLU8CtD\nRRqZOydQFmJ+hceDxhEOWRaudm8Hq2d7A7+GHV8LQbiPyUDrYD+Q+n4gUvOrZ3v0\n8c4ex3SjAgMBAAECggEAJa5+TOUSBxEfVXzJ1o/rBF5P06AbCd2v5uZg5Htg+NBP\nvas4jgDZjJs44eL+fges86iHMx/JX3bmmg0Z0j6oWZN84QQCZuQqAT97j5yGKx8z\nwK+Q9mpFfPDeh9dW2pZIoB8KyFmWeMYf/R7dOCVHqMAUnZty9nG+Q/ncEBTY9e5Q\nZQvpHda6FIZ6Ebu4ymFOPip2x1l+10VpMQr3ubNXr4WG6SZtmYRxZAfSR0w3g1yz\nkXT7O89xc/nnZakUPwmn7JQG5oSfVrov4g+5MiSuQ8M6kJESmIHBReVsLvXQC3jB\nG94XcaIUgSAOf0M+voqMGXDL1hDpL6WjFaI6ZZYvUQKBgQD19DkdbAlGE0iyA8AW\nFF2PqfmjhXlT6kWZOCICtbyeFDVdBaFH7CorF3HGLoCbiJ9XW3KOfuwKlVwF8BSS\nlJAeCgUKXeJUtkEDoPPRTX3Z7UovVfTFDCbUe9VoBZ3KlGGeDroJAUagipUyUJso\nXmOjeiCQ5X4yd7mgVAls3ua+HQKBgQDyFI2R9eg5HFOD79n10kDdHU9l2RR40wSH\nHqiy2CvQD1fgjNfE7bKsy6xCcK0E9/8NibPQ8npiFkcLz4nNxlHPqKg3xALjtHeK\n3WWCJoQ/iT3AA5cnXZ97pwoRymhQUt14fq3VlEfdbkngGNnzquZ2F5nob2vMOxXN\neC2r2a+BvwKBgQDLoABRPYqH+5sp1jUHkqDLOhw1p2GFeeVZLsHpoHCiJ3TuqKSY\nGQvoVSaavxE2s2vINSuokaf2MyXWvKcrm9edJwp5RLUHEUTOLkjttcxFylCq0+0r\n3h2fuU47KrsyZppS8zpODkJc058l4toyF8NCKvAfRgCu47RI6opLGlfKeQKBgQDj\nH8VznHQ0oQ76Sp8EtC+HRWio9fLvKYyl+W3t3kO9AahBVeNbMGjjFnSYIX8zmjoC\nSaAb+mQ4gw5FVoLEPb2kR2kMaSsM2NUPxIjog5qwweLdtICsvnpTWXVpG66jLhv8\nYV5XdLe4WTGWv7o9k6qGQb51BZTuGMFr9cVj5ulzoQKBgETwKGhKr8tnV4pA+n5k\nAfbzLePtQKj1D6ERcnfnwkNqRiOzIAnh9Gyhp+ED/tzX61/x2oqSls0ihRX2I2kO\nY5n+fKjwFmMH5nk+pp9o41v/LZ/NTYEL5hbBdqo4Q5sJxIYRwctztFP3fTxO56+M\nSqY39TB2d4LU1P27RK2BR0fR\n-----END PRIVATE KEY-----\n",
-    "client_email": "adafwwf@braingroom-india.iam.gserviceaccount.com",
-    "client_id": "116396112717090728311",
-    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-    "token_uri": "https://oauth2.googleapis.com/token",
-    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/adafwwf%40braingroom-india.iam.gserviceaccount.com"
-}
+
