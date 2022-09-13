@@ -119,13 +119,13 @@ def run_bot():
                 
                 sleep(sleep_in_between)
                 
-            counter_file.write(f"{index+1}")
             sleep(randint(10,20))
             print("done for",phone_numbers[index])
         except Exception as e:
             print(f"Failed for Number {phone_numbers[index]}",e)
             outgoing.append_row([phone_numbers[index],names[index],"failed"])
-
+        finally:
+            counter_file.write(f"{index+1}")
 
 def __run_mainloop__():
     
