@@ -81,7 +81,7 @@ def run_bot():
         
         counter_file = open("count.txt","w",encoding="utf8")
 
-        driver.get(f'https://web.whatsapp.com/send?phone=+{phone_numbers[index]}+323')
+        driver.get(f'https://web.whatsapp.com/send?phone=+{phone_numbers[index]}')
 
         try:
             for key in message:
