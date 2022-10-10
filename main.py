@@ -23,6 +23,7 @@ from config import (
 from random import randint
 from selenium.webdriver.chrome.options import Options
 import chromedriver_autoinstaller
+from clean_sheet import clean_numbers
 
 def completed_till()->int:
 
@@ -128,10 +129,23 @@ def run_bot():
             counter_file.write(f"{index+1}")
 
 def __run_mainloop__():
-    
-    try:
-        run_bot()
-    except Exception as e:
-        print("some err occured",e)
+
+    print("""
+        1 = Send Whatsapp messages
+        2 = Get already sended numbers
+    """)
+
+    choice = int(input("Choice: "))
+
+    if choice==1:
+        try:
+            run_bot()
+        except Exception as e:
+            print("some err occured",e)
+    elif choice==2:
+        clean_numbers(url)
+
+    else:
+        print("invalid choice")
 
 __run_mainloop__()

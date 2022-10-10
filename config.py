@@ -2,21 +2,20 @@
 
 
 
-sleep_in_between = 3 # sleep after every message 
+sleep_in_between = 1.0  # sleep after every message 
 url = "https://docs.google.com/spreadsheets/d/16cfEsfUVomuTAPlRLVvpX4YAiJx8ocPGa_yiOR6Lqls/edit?pli=1#gid=0"
 loading_sleep = 30 # increase this if you have slow internet connection
 
 ending_row = 100
 
 message = {
-
-    "message,1": "hi how are you <name>",
-    "media,2": "mikasa acr.jpg",
-    "message,3": "nic to meet you",
-    "media,4" : "resume swap.pdf"
-
+    "message,1":"Hey! <name>",
+    "message,2":"Thank you for joining us on the virtual talk by *Dr Rafiee*",
+    "message,3":"By now, do you have a better idea about being an Engineer?",
+    "message,4":"Are you keen to find out more about studying at *Sarawak* ?",
+    "message,5":"Contact our friendly counsellors at Education Center",
+    "message,6":" Your Study Local and Overseas Specialist! "
 }
-
 
 # message = {
 #     "message,1": "Good evening, <name>",
