@@ -53,9 +53,11 @@ def run_bot():
     gsheet = gc.open_by_url(url)
     worksheet = gsheet.get_worksheet(0)
     outgoing = gsheet.get_worksheet(1)
-    phone_numbers = worksheet.col_values(1)[:ending_row]
-    names = worksheet.col_values(2)[:ending_row]
     
+    phone_numbers = worksheet.col_values(1)[:ending_row]  # col of phone numbers
+    names = worksheet.col_values(2)[:ending_row] # col of names
+    ids = worksheet.col_values(3)[:ending_row] # col of ids
+
     for _ in range(len(phone_numbers)-len(names)):
         names.append("")
     
@@ -90,7 +92,7 @@ def run_bot():
                 
                 if(key.split(",")[0]=="message"):
                     
-                    message_ = message[key].replace("<name>",names[index])
+                    message_ = message[key].replace("<name>",names[index]).replace("<id>",ids[index])
 
                     type_box = WebDriverWait(driver,loading_sleep).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[1]/div[1]/div[1]/div[4]/div[1]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]")))
                     

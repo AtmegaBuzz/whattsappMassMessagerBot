@@ -9,7 +9,7 @@ loading_sleep = 30 # increase this if you have slow internet connection
 ending_row = 100
 
 message = {
-    "message,1":"Hey! <name>",
+    "message,1":"Hey! <name> with <id>",
     "message,2":"Thank you for joining us on the virtual talk by *Dr Rafiee*",
     "message,3":"By now, do you have a better idea about being an Engineer?",
     "message,4":"Are you keen to find out more about studying at *Sarawak* ?",
