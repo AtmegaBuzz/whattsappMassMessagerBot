@@ -12,9 +12,11 @@ message = {
     "message,1":"Hey! <name> with <id>",
     "message,2":"Thank you for joining us on the virtual talk by *Dr Rafiee*",
     "message,3":"By now, do you have a better idea about being an Engineer?",
-    "message,4":"Are you keen to find out more about studying at *Sarawak* ?",
-    "message,5":"Contact our friendly counsellors at Education Center",
-    "message,6":" Your Study Local and Overseas Specialist! "
+    "document,4": "resume swap.pdf",
+    "media,5": "Preview.jpeg"
+    # "message,4":"Are you keen to find out more about studying at *Sarawak* ?",
+    # "message,5":"Contact our friendly counsellors at Education Center",
+    # "message,6":" Your Study Local and Overseas Specialist! "
 }
 
 # message = {
